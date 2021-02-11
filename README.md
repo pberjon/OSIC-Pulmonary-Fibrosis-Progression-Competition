@@ -18,6 +18,8 @@ In that dataset, we have 7 different variables :
    
 For most variables, we will study the skewness, the kurtosis and we will show some visuaal representations in order to know better the dataset.
 
+# Classification of Smoking Habits
+
 ## Target : SmokingStatus Column
 
 Here we can see the distribution of SmokingStatus(pie) : 
@@ -94,3 +96,30 @@ Here we train our data with a Random Forest Classifier :
 ![picture](https://github.com/pberjon/OSIC-Pulmonary-Fibrosis-Progression-Competition/blob/main/images/cm2.PNG)
 
 With this one, we got 79% of accuracy.
+
+# Classification of FVC
+
+Here we are going to perform another category of classification, grouping the different values taken by the GCF to be able to determine whether a person is healthy or not. Firstly, we need to modify our dataset in order to change the Percent variable into a new one, which we will call HealthCondition, which is just a transformation of the previous one (Healthy if 80 > Percent > 120 and Too Low/High in the other cases). We will also change the other categorical variables into numerical ones.
+
+We show the 5 first observations of this new dataset : 
+
+![picture](https://github.com/pberjon/OSIC-Pulmonary-Fibrosis-Progression-Competition/blob/main/images/tab4.PNG)
+
+We show determine the correlation matrix of this new dataset : 
+
+![picture](https://github.com/pberjon/OSIC-Pulmonary-Fibrosis-Progression-Competition/blob/main/images/corr1.PNG)
+
+We can see here that by changing the categorical variables into quantitative variables (with Label Encoding), we can see that the FVC and Sex variables are relatively correlated.
+As before, we decided to train a Logistic Regression and a Random Forest on our data. 
+
+## Logistic Regression
+
+![picture](https://github.com/pberjon/OSIC-Pulmonary-Fibrosis-Progression-Competition/blob/main/images/cm3.PNG)
+
+We obtained an accuracy of 77%.
+
+## Random Forest
+
+![picture](https://github.com/pberjon/OSIC-Pulmonary-Fibrosis-Progression-Competition/blob/main/images/cm4.PNG)
+
+We obtained an accuracy of 82%.
